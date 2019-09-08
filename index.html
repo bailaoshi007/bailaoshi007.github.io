@@ -152,23 +152,24 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="Hexo个人博客之中文乱码问题"><a href="#Hexo个人博客之中文乱码问题" class="headerlink" title="Hexo个人博客之中文乱码问题"></a>Hexo个人博客之中文乱码问题</h3><p>有些童鞋可能在Hexo博客中设置中文出现问题，如下图所示，</p>
+<p><img src="/2019/09/09/Hexo个人博客之中文乱码问题/blog-encoding-00.png" alt></p>
 <p>遇到这种问题很是难受，下面我就大家说下我的解决方法：</p>
-<p>是因为配置文件<code>_config.yml</code>没有使用<code>UTF-8</code>编码集，</p>
+<p>出现乱码是因为配置文件<code>_config.yml</code>没有使用<code>UTF-8</code>编码集，汉字没有被正确编译。</p>
+<p>好了，既然找到了问题的所在，那么怎么办呢？</p>
+<p><img src="/2019/09/09/Hexo个人博客之中文乱码问题/query.gif" alt></p>
 <p>具体更改方法：</p>
 <ol>
-<li>找到<code>_config.yml</code>文件,使用记事本打开，如图</li>
-</ol>
-<p><img src alt="blog-encoding-00.png"></p>
-<ol start="2">
-<li>打开菜单栏文件按钮，选择另存为，</li>
-</ol>
-<p><img src alt="blog-encoding-01.png"></p>
-<ol start="3">
-<li>选择编码集，UTF-8，然后保存就可以了。</li>
-</ol>
-<p><img src alt="blog-encoding-02.png"></p>
-<ol>
-<li>然后就可以愉快的玩耍了！哈哈！</li>
+<li><p>找到<code>_config.yml</code>文件,使用记事本或者其他文本编辑器打开，如图</p>
+<p><img src="/2019/09/09/Hexo个人博客之中文乱码问题/blog-encoding-01.png" alt></p>
+</li>
+<li><p>打开菜单栏<code>文件</code>按钮，选择<code>另存为</code></p>
+</li>
+<li><p>选择编码集，<code>UTF-8</code>，保存！确认覆盖！</p>
+<p><img src="/2019/09/09/Hexo个人博客之中文乱码问题/blog-encoding-02.png" alt></p>
+</li>
+<li><p>然后就可以愉快的玩耍了！哈哈！</p>
+<p><img src="/2019/09/09/Hexo个人博客之中文乱码问题/kaixin.jpg" alt></p>
+</li>
 </ol>
 
       
