@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://coderbai.club">
-  <title>数据库知识 | Welcome!</title>
+  <title>MyBatis学习 | Welcome欢迎访问我的博客!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 数据库知识的作业写出以下所有操作的SQL语句 创建名为tedu_ums的数据库(DataBase)； CREATE DATABASE tedu_ums ; USE tedu_ums;  在该数据库中创建名为t_user的数据表，该表中至少包括：id、用户名、密码、年龄、手机号码、电子邮箱这些字段； CREATE TABLE t_user (id INT AUTO_INCREMENT COMM">
+  <meta name="description" content="1. MyBatis框架的作用MyBatis是一种持久层框架，用于处理持久化存储数据，即将数据存入到数据库中，后续还可以从数据库中取出所需要的数据，或对这些数据进行修改或删除。 之所以会出现持久层框架，是因为传统 的JDBC技术使用过于繁琐，且操作过程相对固定，无论是做增删改查中的那种操作，都是先建立链接（Connection），设计好SQL语句，就获取Statement/PreparedStat">
 <meta name="keywords" content="数据库相关知识">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库知识">
+<meta property="og:title" content="MyBatis学习">
 <meta property="og:url" content="http://coderbai.club/2019/09/03/数据库知识/index.html">
-<meta property="og:site_name" content="Welcome!">
-<meta property="og:description" content="1. 数据库知识的作业写出以下所有操作的SQL语句 创建名为tedu_ums的数据库(DataBase)； CREATE DATABASE tedu_ums ; USE tedu_ums;  在该数据库中创建名为t_user的数据表，该表中至少包括：id、用户名、密码、年龄、手机号码、电子邮箱这些字段； CREATE TABLE t_user (id INT AUTO_INCREMENT COMM">
+<meta property="og:site_name" content="Welcome欢迎访问我的博客!">
+<meta property="og:description" content="1. MyBatis框架的作用MyBatis是一种持久层框架，用于处理持久化存储数据，即将数据存入到数据库中，后续还可以从数据库中取出所需要的数据，或对这些数据进行修改或删除。 之所以会出现持久层框架，是因为传统 的JDBC技术使用过于繁琐，且操作过程相对固定，无论是做增删改查中的那种操作，都是先建立链接（Connection），设计好SQL语句，就获取Statement/PreparedStat">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-03T14:48:29.799Z">
+<meta property="og:updated_time" content="2019-09-08T16:30:24.988Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库知识">
-<meta name="twitter:description" content="1. 数据库知识的作业写出以下所有操作的SQL语句 创建名为tedu_ums的数据库(DataBase)； CREATE DATABASE tedu_ums ; USE tedu_ums;  在该数据库中创建名为t_user的数据表，该表中至少包括：id、用户名、密码、年龄、手机号码、电子邮箱这些字段； CREATE TABLE t_user (id INT AUTO_INCREMENT COMM">
+<meta name="twitter:title" content="MyBatis学习">
+<meta name="twitter:description" content="1. MyBatis框架的作用MyBatis是一种持久层框架，用于处理持久化存储数据，即将数据存入到数据库中，后续还可以从数据库中取出所需要的数据，或对这些数据进行修改或删除。 之所以会出现持久层框架，是因为传统 的JDBC技术使用过于繁琐，且操作过程相对固定，无论是做增删改查中的那种操作，都是先建立链接（Connection），设计好SQL语句，就获取Statement/PreparedStat">
   
-    <link rel="alternative" href="/atom.xml" title="Welcome!" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Welcome欢迎访问我的博客!" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -155,7 +155,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      数据库知识
+      MyBatis学习
     </h1>
   
 
@@ -168,25 +168,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-数据库知识的作业"><a href="#1-数据库知识的作业" class="headerlink" title="1. 数据库知识的作业"></a>1. 数据库知识的作业</h2><h5 id="写出以下所有操作的SQL语句"><a href="#写出以下所有操作的SQL语句" class="headerlink" title="写出以下所有操作的SQL语句"></a>写出以下所有操作的SQL语句</h5><ol>
-<li><p>创建名为<code>tedu_ums</code>的数据库(DataBase)；</p>
-<p>CREATE DATABASE tedu_ums ;</p>
-<p>USE tedu_ums;</p>
-</li>
-<li><p>在该数据库中创建名为<code>t_user</code>的数据表，该表中至少包括：id、用户名、密码、年龄、手机号码、电子邮箱这些字段；</p>
-<p>CREATE TABLE t_user (id INT AUTO_INCREMENT COMMENT ‘用户id’,username varchar(20) NOT NULL UNIQUE COMMENT ‘用户名’, password VARCHAR(20) NOT NULL COMMENT ‘密码’, age INTEGER COMMENT ‘年龄’, phone VARCHAR(20) NOT NULL COMMENT ‘电话号码’, email VARCHAR(20) NOT NULL COMMENT ‘电子邮箱’ , PRIMARY KEY (id)) CHARSET=UTF8MB4;</p>
-</li>
-</ol>
-<h2 id="2-MyBatis框架的作用"><a href="#2-MyBatis框架的作用" class="headerlink" title="2. MyBatis框架的作用"></a>2. MyBatis框架的作用</h2><p>MyBatis是一种持久层框架，用于处理持久化存储数据，即将数据存入到数据库中，后续还可以从数据库中取出所需要的数据，或对这些数据进行修改或删除。</p>
+        <h2 id="1-MyBatis框架的作用"><a href="#1-MyBatis框架的作用" class="headerlink" title="1. MyBatis框架的作用"></a>1. MyBatis框架的作用</h2><p>MyBatis是一种持久层框架，用于处理持久化存储数据，即将数据存入到数据库中，后续还可以从数据库中取出所需要的数据，或对这些数据进行修改或删除。</p>
 <p>之所以会出现持久层框架，是因为传统 的JDBC技术使用过于繁琐，且操作过程相对固定，无论是做增删改查中的那种操作，都是先建立链接（Connection），设计好SQL语句，就获取Statement/PreparedStatement对象，然后执行，执行完毕后，将处理结果，如果是查询操作，可能需要处理ResultSet，如果是增删改操作，还会得到受影响的行数，以此判断操作成功与否，处理完毕之后，还需要关闭或者归原连接，以释放资源。</p>
 <p>常见的持久层框架有MyBatis，Hibernate，其主要作用都是简化持久层开发。以MyBatis为例，只需要开发人员编写操作所对应的抽象方法及SQL语句即可，无需关注实现过程。</p>
-<h2 id="3-使用MyBatis-Spring的项目"><a href="#3-使用MyBatis-Spring的项目" class="headerlink" title="3. 使用MyBatis+Spring的项目"></a>3. 使用MyBatis+Spring的项目</h2><p>创建Maven Project，Group Id为cn.tedu.mybatis,Artifact Id为MyBatis，Packaging选择war。</p>
+<h2 id="2-使用MyBatis-Spring的项目"><a href="#2-使用MyBatis-Spring的项目" class="headerlink" title="2. 使用MyBatis+Spring的项目"></a>2. 使用MyBatis+Spring的项目</h2><p>创建Maven Project，Group Id为cn.tedu.mybatis,Artifact Id为MyBatis，Packaging选择war。</p>
 <p>由于此前在spring.xmlzhong 的配置基本上在当前案例中都不再需要使用，所以，将spring.xml重命名为spring-mvc.xml，并将该文件复制叨叨spring-dao.xml，清空该文件的配置，然后，在web.xml中，将加载文件名改为spring-dao.xml;</p>
 <p>然后，需要添加一些新的依赖：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- MyBatis框架--&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 备选版本号：3.5.0，3.4.0~3.4.6 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>3.5.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- MyBatis整合Spring --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 备选版本号：2.0.0，1.3.0~1.3.2 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- MySQL --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 备选版本号：8.0.12~8.0.15 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.16<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- DBCP --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-dbcp<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-dbcp<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--单元测试 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--Spring框架，其实并不一定需要完成的webMVC --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.8.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--Spring JDBC --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 注意：需要使用与spring-webmvc相同的版本 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.8.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>然后，在src/main/resources下创建db.properties文件，用于配置数据库连接相关信息。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">url=jdbc:mysql://localhost:3306/tedu_ums?useUnicode=true&amp;characterEncoding=utf-8</span><br><span class="line">&amp;serverTimezone=Asia/Chongqing</span><br><span class="line">driver=com.mysql.cj.jdbc.Driver</span><br><span class="line">username=root</span><br><span class="line">password=123456</span><br><span class="line">initialSize=2</span><br><span class="line">maxActive=5</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">url=jdbc:mysql://localhost:3306/user?useUnicode=true&amp;characterEncoding=utf-8</span><br><span class="line">&amp;serverTimezone=Asia/Chongqing</span><br><span class="line">driver=com.mysql.cj.jdbc.Driver</span><br><span class="line">username=root</span><br><span class="line">password=123456</span><br><span class="line">initialSize=2</span><br><span class="line">maxActive=5</span><br></pre></td></tr></table></figure>
 
 <p>==db.properties文件中的serverTimezone=Asia/Chongqing是在pom.xml中导入的mysql包达到6.0以上版本才要新加的代码。==</p>
 <p>==initialSize和maxActive在项目上线之后还需要进行动态调整。==</p>
@@ -322,9 +313,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/09/09/Hexo个人博客之中文乱码问题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
-    <a href="/2019/09/03/2019-09-02学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">2019-09-02学习笔记</div>
+  
+    <a href="/2019/09/01/Hexo个人博客创建的方法-转自codesheep/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo个人博客创建的方法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -450,15 +450,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hexo微博创建及部署</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">个人博客 hexo 创建 部署</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hexo微博创建及部署</a>
               </li>
              
               <li class="article-tag-list-item">
