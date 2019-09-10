@@ -146,46 +146,194 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Hexo博客中文乱码问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-保密学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/11/Hexo博客中文乱码问题/">Hexo博客中文乱码问题</a>
+      <a class="article-title" href="/2019/07/11/保密学习/">保密学习</a>
     </h1>
   
 
         
-        <a href="/2019/05/11/Hexo博客中文乱码问题/" class="archive-article-date">
-  	<time datetime="2019-05-10T16:02:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-11</time>
+        <a href="/2019/07/11/保密学习/" class="archive-article-date">
+  	<time datetime="2019-07-10T16:22:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Hexo个人博客之中文显示乱码问题"><a href="#Hexo个人博客之中文显示乱码问题" class="headerlink" title="Hexo个人博客之中文显示乱码问题"></a>Hexo个人博客之中文显示乱码问题</h3><p>有些童鞋可能在Hexo博客中设置中文出现问题，如下图所示，</p>
-<p><img src="/2019/05/11/Hexo博客中文乱码问题/blog-encoding-00.png" alt></p>
-<p>遇到这种问题很是难受，下面我就大家说下我的解决方法：</p>
-<p>出现乱码是因为配置文件<code>_config.yml</code>没有使用<code>UTF-8</code>编码集，汉字没有被正确编译。</p>
-<p>好了，既然找到了问题的所在，那么怎么办呢？</p>
-<p><img src="/2019/05/11/Hexo博客中文乱码问题/query.jpg" alt></p>
-<p>具体更改方法：</p>
+        <h1 id="加密学习"><a href="#加密学习" class="headerlink" title="加密学习"></a><strong>加密学习</strong></h1><h2 id="1-加密的意义"><a href="#1-加密的意义" class="headerlink" title="1. 加密的意义"></a>1. 加密的意义</h2><p>​        有效保障数据库被外泄时候用户账号密码的安全性，即得到了数据库的数据也不能破解出用户密码（数据库中的存的密码是通过加密计算得出的，用户登录时候提交密码被同样的加密算法计算，最终用算得的结果来和数据库中的密码进行对比验证）。可以被逆运算出的加密算法不适合做密码加密，可被逆运算出的密码容易被破解，容易被黑客获取真实登录密码，所以应该使用不可逆运算模式的消息摘要算法。</p>
+<h2 id="2-消息摘要算法的特征"><a href="#2-消息摘要算法的特征" class="headerlink" title="2. 消息摘要算法的特征"></a>2. 消息摘要算法的特征</h2><ol>
+<li><p>原始数据相同时，使用同样的摘要算法，得到的摘要必然相同；</p>
+</li>
+<li><p>使用某一种摘要算法时，无论原始数据长度多少，得到的摘要的长度是固定的，通常，是128~512个二进制数；</p>
+</li>
+<li><p>原始数据不相同时，使用同样的摘要算法，几乎（概率较低）不会得到相同的摘要；</p>
+</li>
+</ol>
+<p>通过限制原密码的长度可以极大程度的降低原文不同摘要却相同的概率，从而进一步降低风险。</p>
+<h2 id="3-摘要算法分类及目前安全性问题的应对措施"><a href="#3-摘要算法分类及目前安全性问题的应对措施" class="headerlink" title="3. 摘要算法分类及目前安全性问题的应对措施"></a>3. 摘要算法分类及目前安全性问题的应对措施</h2><p>​        算法主要有SHA(Secure Hash Algorithm)家族算法和MD(Message Digest)系列算法，例如：SHA-1、SHA-256、SHA-384、SHA-512、MD2、MD4、MD5等。目前有一些网站通过穷举法列出了不同的摘要算法结果对应的密码，所以只是单一的使用摘要算法已经不能保证密码的安全。</p>
+<h4 id="应对措施："><a href="#应对措施：" class="headerlink" title="应对措施："></a>应对措施：</h4><ol>
+<li><p>用户使用强度更高的密码，增加长度，在密码中同时添加数字和符号；</p>
+</li>
+<li><p>多重加密，多次使用摘要算法计算；</p>
+</li>
+<li><p>加盐，增加算法的复杂性；</p>
+</li>
+<li><p>以上方法结合起来使用。</p>
+</li>
+</ol>
+<h2 id="4-两个具体问题"><a href="#4-两个具体问题" class="headerlink" title="4. 两个具体问题"></a>4. 两个具体问题</h2><h5 id="1-java代码中使用MD5摘要算法的方式："><a href="#1-java代码中使用MD5摘要算法的方式：" class="headerlink" title="1. java代码中使用MD5摘要算法的方式："></a>1. java代码中使用MD5摘要算法的方式：</h5><ul>
+<li>Spring框架DigestUtils工具；</li>
+<li>使用Maven引入commons—codec依赖。</li>
+</ul>
+<h5 id="2-盐值的使用"><a href="#2-盐值的使用" class="headerlink" title="2. 盐值的使用"></a>2. 盐值的使用</h5><ul>
+<li>盐值长度为36个字节，这是由UUID决定的；</li>
+<li>注册时：随机生成盐值，将盐值随用户的其他数据在注册的时候一起存放到数据库用户信息中；</li>
+<li>登录时：通过用户名找到对应用户信息，将密码和盐值经过注册时候同样的操作处理，将生成的密码和数据库中的密码进行验证对比。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">摘要算法 盐值 MD5</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/11/保密学习/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-AJAX学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/11/AJAX学习/">AJAX学习</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/11/AJAX学习/" class="archive-article-date">
+  	<time datetime="2019-06-10T16:15:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-关于服务器向客户端的响应方法"><a href="#1-关于服务器向客户端的响应方法" class="headerlink" title="1. 关于服务器向客户端的响应方法"></a>1. 关于服务器向客户端的响应方法</h4><p>传统的做法中，服务器端的控制器在处理完数据之后，可以选择转发，或重定向，最终，向客户端进行响应！</p>
+<p>但是，这种做法存在比较明显的缺陷：服务器终端始终向客户端响应某个页面（不同的业务处理响应不同的页面），页面中的源代码的长度决定了页面文件的数据量，且HTML页面中可能还引用了图片、CSS、JavaScript文件，这些文件也都会影响到客户端，就可能导致响应的数据较多，进而引发流量消耗较大的问题，还有用户体验略差的问题，另外，页面也不一定适用于多种不同类型的客户端，也不便于实现前后端的分离！</p>
+<p>目前推荐的做法是：服务端的控制器在处理完数据之后，向客户端响应正文，即一段字符串，这个字符串中，只包含需要响应给客户端的数据部分，而不关系数据如何显示的问题。</p>
+<h4 id="2-服务器向客户端响应正文"><a href="#2-服务器向客户端响应正文" class="headerlink" title="2. 服务器向客户端响应正文"></a>2. 服务器向客户端响应正文</h4><p>在SpringMVC项目中，可以将处理请求的方法的返回值类型设置为String，表示需要响应的正文，然后，在方法之前添加<code>@ResponseBody</code>注解，表示本次响应将不再是转发或重定向，而是直接将方法的返回值响应给客户端，其他配置或操作与一般的SpringMVC项目完全相同：</p>
+<p>==在使用<code>Controller</code>的时候必须在Spring中添加组件扫描包，相当于是生成<code>Controller</code>的对象，这样才可以去调用方法。==</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"cn.bai.ajax"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>控制器中的代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line">	<span class="meta">@RequestMapping</span>(<span class="string">"hello.do"</span>)</span><br><span class="line">	<span class="meta">@ResponseBody</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">testHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"success"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>由于默认的响应头中设置的<code>Content-Type</code>值为<code>text/html;charset=ISO-8859-1</code>,所以，默认情况下，如果直接返回中文，在浏览器中看到的会是乱码。</p>
+<h4 id="3-服务器响应的正文"><a href="#3-服务器响应的正文" class="headerlink" title="3. 服务器响应的正文"></a>3. 服务器响应的正文</h4><p>当服务器端响应正文，其正文中应该包括服务器端处理的结果，例如处理用户登录后将得到成功或失败的结果之一，或者需要包括服务器端需要响应给客户端的数据，例如用户查看个人资料时候，服务器端需要将该用户的资料响应给客户端，所以，响应的正文可能包括操作结果、相关数据等！</p>
+<p>假设用户提交的请求时查看个人资料，且服务器端通过多种验证后决定将该用户的资料响应给客户端，但是，响应的正文只是一个字符串，用户的信息可能比较丰富，包括id、用户名、密码、年龄等一系列数据！那么，如何使用1个字符串表示这么多项数据呢？显然不可能直接将数据没有规则拼接在一起：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">john12345613051321586john@163.com</span><br></pre></td></tr></table></figure>
+
+<p>所以，应该将需要响应的数据使用某种规则组织起来，例如使用XML语法来组织：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">user</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">id</span>&gt;</span>1<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">username</span>&gt;</span>john<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">password</span>&gt;</span>123456<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">age</span>&gt;</span>23<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">phone</span>&gt;</span>13800138001<span class="tag">&lt;/<span class="name">phone</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">email</span>&gt;</span>john@tedu.cn<span class="tag">&lt;/<span class="name">email</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">user</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>实际上，这个地方其实可以推荐使用JSON格式的数据：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">"id"</span>:<span class="number">1</span>,</span><br><span class="line">	<span class="string">"name"</span>:<span class="string">"xiaoli"</span>,</span><br><span class="line">	<span class="string">"password"</span>:<span class="string">"1234"</span>,</span><br><span class="line">	<span class="string">"age"</span>:<span class="number">13</span>,</span><br><span class="line">	<span class="string">"phone"</span>:<span class="string">"131313131"</span>,</span><br><span class="line">	<span class="string">"email"</span>:<span class="string">"john@163.com"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>相比之下，JSON格式的数据对比XML格式的数据来说，有优点：</p>
 <ol>
-<li><p>找到<code>_config.yml</code>文件,使用记事本或者其他文本编辑器打开，如图</p>
-<p><img src="/2019/05/11/Hexo博客中文乱码问题/blog-encoding-01.png" alt></p>
+<li>语法更简洁，使用的字符数量更少，进而导致流量消耗的更少，用户体验好；</li>
+<li>解析简单。==？？？？==</li>
+</ol>
+<h4 id="4-JSON数据格式"><a href="#4-JSON数据格式" class="headerlink" title="4. JSON数据格式"></a>4. JSON数据格式</h4><p>JSON数据的语法有：</p>
+<ol>
+<li><p>一个大括号{}表示一个对象，整个JSON数据就是一个对象；</p>
 </li>
-<li><p>打开菜单栏<code>文件</code>按钮，选择<code>另存为</code></p>
+<li><p>各个属性的配置之间，使用逗号进行分割；</p>
 </li>
-<li><p>选择编码集，<code>UTF-8</code>，保存！确认覆盖！</p>
-<p><img src="/2019/05/11/Hexo博客中文乱码问题/blog-encoding-02.png" alt></p>
+<li><p>属性名称使用字符串类型，需要使用双引号框住（也可以使用单引号，甚至一些效率要求高的场景不使用引号），其对应的数值型和布尔型不添加双引号，属性和值之间用冒号连接；</p>
 </li>
-<li><p>然后就可以愉快的玩耍了！哈哈！</p>
-<p><img src="/2019/05/11/Hexo博客中文乱码问题/kaixin.jpg" alt></p>
+<li><p>属性的值的类型还可以是数组，值使用中括号[]；</p>
+</li>
+<li><p>属性的值的类型还可以是另一个对象，值使用大括号{}</p>
+<p>例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;id&quot;:1,</span><br><span class="line">	&quot;name&quot;:&quot;xiaoli&quot;,</span><br><span class="line">	&quot;password&quot;:&quot;1234&quot;,</span><br><span class="line">	&quot;age&quot;:13,</span><br><span class="line">	&quot;phone&quot;:&quot;131313131&quot;,</span><br><span class="line">	&quot;email&quot;:&quot;john@163.com&quot;,</span><br><span class="line">	&quot;hobbies&quot;:[&quot;dance&quot;,&quot;singing&quot;,&quot;playing games&quot;],</span><br><span class="line">	&quot;father&quot;:&#123;</span><br><span class="line">        &quot;id&quot;:2,</span><br><span class="line">        &quot;name&quot;:&quot;dali&quot;,</span><br><span class="line">        &quot;password&quot;:&quot;1234&quot;,</span><br><span class="line">        &quot;age&quot;:43,</span><br><span class="line">        &quot;phone&quot;:&quot;13132131&quot;,</span><br><span class="line">        &quot;email&quot;:&quot;jofhn@163.com&quot;</span><br><span class="line">        &quot;hobbies&quot;:[&quot;dance&quot;,&quot;singing&quot;,&quot;playing games&quot;]	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>==一定不要忘记属性之间是用逗号‘’，‘’分割==</p>
 </li>
 </ol>
+<h4 id="5-服务器向客户端响应JSON格式的数据"><a href="#5-服务器向客户端响应JSON格式的数据" class="headerlink" title="5. 服务器向客户端响应JSON格式的数据"></a>5. 服务器向客户端响应JSON格式的数据</h4><p>在服务器端创建User类，在类种声明属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class User &#123;</span><br><span class="line">	private Integer id;</span><br><span class="line">	private String name;</span><br><span class="line">	private String password;</span><br><span class="line">	private Integer age;</span><br><span class="line">	private String phone;</span><br><span class="line">	private String email;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>==一定要配置注解驱动：大致意思是mvc：注解已经被驱动，这个jason是通过mvc来驱动的==</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mvc:annotation-driven</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>当SpringMVC框架向客户端响应正文的时候，框架内部需要使用Converter（转换器）将方法的返回值转换为字符串响应给客户端，如果返回值类型为String类型，会使用StringHttMessageConverter转换器，如果返回值的类型是SpringMVC框架默认不可识别的类型（例如开发者自定义的数据类型），将会自动使用Jackson框架内部的转换器，Jackson框架内部的转换器会自动将对象转换为JSON格式的字符串，并且，在响应头（Response Headers）中，将content—Type值设置为application/json；charset=utf-8，所以响应的数据中是可以包含中文的。</p>
+<p>小结：当服务器需要向客户端响应JSON格式的数据时，应该自定义某个数据类型，把要响应的属性设计为该类的属性，然后，在控制器处理请求的方法中，返回该类型的对象即可！</p>
+<p>客户端可以向服务器端提交登录请求，服务器端对客户端提交的用户名、密码进行判断，最终响应给客户端某个JSON字符串，可能是</p>
+<ul>
+<li>{“state”：1}：表示通过登录验证，登录成功</li>
+<li>{“state”：2}：表示登录失败，用户名错误</li>
+<li>{“state”：3}：表示登录失败，密码错误</li>
+</ul>
+<p>首先，应当自定义某个类，可以封装将要体现在JSON字符串中的属性，则创建cn.tedu.ajax.JsonResult类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public class JsonResult&#123;</span><br><span class="line">	private Integer state;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上类型将是控制器处理请求的方法的返回值类型！</p>
+<p>然后，假设root/1234是正确的用户名和密码，则创建控制器来处理请求</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class UserController&#123;</span><br><span class="line">	@RequestMapping(&quot;login.do&quot;)</span><br><span class="line">	@ResponseBody</span><br><span class="line">	public JsonResult a()&#123;</span><br><span class="line">if (&quot;root&quot;.equals(username)) &#123;</span><br><span class="line">			if (&quot;1234&quot;.equals(password)) &#123;</span><br><span class="line">				jsonResult.setState(1);</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				jsonResult.setState(3);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			jsonResult.setState(2);</span><br><span class="line">		&#125;</span><br><span class="line">		return jsonResult;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>// $.ajax()函数用于发出异步请求，并获取响应结果<br>    // 该函数的参数是一个JSON对象<br>    // 参数对象中至少应该指定5个属性<br>    // url：将请求提交到哪里去<br>    // data：请求参数<br>    // type：请求类型，取值为get或post等<br>    // dataType：服务器响应的结果的类型，取值为text/xml/json等，取决于响应头(Response Headers)中的Content-Type<br>    // success：服务器成功响应(HTTP响应码是2xx)时的回调函数，函数中的参数就是服务器端响应的JSON数据的对象</p>
 
       
 
@@ -199,7 +347,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hexo博客 中文字体</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AJAX Json</a>
         		</li>
       		
 		</ul>
@@ -209,7 +357,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/11/Hexo博客中文乱码问题/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/06/11/AJAX学习/">展开全文 >></a>
         </p>
       
 
@@ -239,143 +387,10 @@
 
 
   
-    <article id="post-Hexo博客修改推远端的方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/03/Hexo博客修改推远端的方法/">Hexo博客修改推远端的方法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/03/Hexo博客修改推远端的方法/" class="archive-article-date">
-  	<time datetime="2019-05-03T14:41:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="创建Hexo博客"><a href="#创建Hexo博客" class="headerlink" title="创建Hexo博客"></a>创建Hexo博客</h2><ol>
-<li><p>输入命令<code>cnpm install -g hexo-cli</code>（因为nodejs，npm，以及cnpm都安装过所以不用安装，可以直接使用cnpm）。</p>
-</li>
-<li><p>查看hexo是否安装完成，输入命令<code>hexo -v</code>。</p>
-</li>
-<li><p>创建blog文件夹，输入命令<code>mkdir blog</code>。</p>
-</li>
-<li><p>转到blog文件夹下，输入命令 <code>cd blog/</code>。</p>
-</li>
-<li><p>在blog文件夹下，初始化hexo，输入命令<code>hexo init</code>，就会在blog文件夹下生成hexo的框架文件。</p>
-</li>
-<li><p>启动blog，输入命令<code>hexo s</code>。==用来做预览用==</p>
-</li>
-<li><p>创建博客文章，输入命令<code>hexo n &quot;Spring学习笔记&quot;</code>。</p>
-</li>
-<li><p>进入”Spring学习笔记”这个文章，先进入—post文件夹下直接在blog文件夹下输入命令<code>cd source\_posts\</code> 然后再输入命令<code>Spring学习笔记.md</code>就可以进入文章编辑页面，不需要加引号。</p>
-</li>
-<li><p>创建完成文章后，要先清理下，输入命令<code>hexo clean</code>。</p>
-</li>
-<li><p>生成一下，输入命令<code>hexo g</code>。</p>
-</li>
-<li><p>==注意！！！==</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: Spring学习笔记</span><br><span class="line">date: 2019-02-01 01:04:55</span><br><span class="line">tags: Spring</span><br></pre></td></tr></table></figure>
-
-<p>冒号后面必须要有空格，否则文章生成过程会报错！！</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ERROR Process failed: _posts/Spring学习笔记.md</span><br><span class="line">YAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 4, column 1:</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>写完文章之后，就可以输入开始命令<code>hexo s</code>，在<code>localhost：4000</code>地址预览文章</p>
-</li>
-</ol>
-<h2 id="Hexo博客部署到Github上的方法"><a href="#Hexo博客部署到Github上的方法" class="headerlink" title="Hexo博客部署到Github上的方法"></a>Hexo博客部署到Github上的方法</h2><ol>
-<li><p>先在github添加新的repository，名字必须是你的<code>github昵称.github.io</code>;</p>
-</li>
-<li><p>然后启动Git Bash输入命令<code>cnpm install --save hexo-deployer-git</code>安装。必须启动Git Bash！！</p>
-</li>
-<li><p>然后输入命令<code>dir</code> 查询目录，找到<code>_config.yml</code>文件，输入文件名，打开该文件。</p>
-</li>
-<li><p>在文件最底部的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/bailaoshi007/bailaoshi007.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">  //一定要注意冒号后面是有空格的！！！！！！</span><br><span class="line">  //repo是你刚才在github上生成的那个repository地址</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改完成后，保存文件。</p>
-</li>
-<li><p>然后输入命令<code>hexo d</code>部署到远端。</p>
-</li>
-<li><p>第一次使用会让输入github网站的账号和密码。</p>
-</li>
-<li><p>接下来就可以直接访问地址<code>bailaoshi007.github.io</code>来进入博客。</p>
-</li>
-</ol>
-<h2 id="Hexo博客修改主题"><a href="#Hexo博客修改主题" class="headerlink" title="Hexo博客修改主题"></a>Hexo博客修改主题</h2><ol>
-<li><p>在blog文件夹下操作，输入命令<code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code>相当于是克隆别人的主题到自己的github上然后放到themes文件夹下。</p>
-</li>
-<li><p>克隆完之后，可以去themes文件夹下找到yilia这个文件夹。</p>
-</li>
-<li><p>修改<code>_config.yml</code>文件中的配置参数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: yilia</span><br><span class="line">//只是修改theme从landscape到yilia</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>然后输入命令<code>hexo clean</code>清理一下，<code>hexo g</code>生成一下，<code>hexo s</code>本地启动预览一下，<code>hexo d</code>部署到github上。</p>
-</li>
-<li><p>然后可以通过访问<code>bailaoshi007.github.io</code>这个地址看到新修改的主题了！！</p>
-<p>大功告成！！！</p>
-</li>
-</ol>
-<p>### </p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hexo微博创建及部署</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/03/Hexo博客修改推远端的方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -469,11 +484,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AJAX Json</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hexo博客 中文字体</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hexo微博创建及部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">摘要算法 盐值 MD5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">MyBatis 数据库链接池</a>
               </li>
             
             <div class="clearfix"></div>

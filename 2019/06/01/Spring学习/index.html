@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.coderbai.club">
-  <title>Archives: 2019 | Welcome欢迎访问我的博客!</title>
+  <title>Spring学习笔记 | Welcome欢迎访问我的博客!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Welcome欢迎访问我的博客!">
-<meta property="og:url" content="http://www.coderbai.club/archives/2019/index.html">
+  <meta name="description" content="SpringSpring 春天 Spring 是开源组织。Spring组织提供了很多开源组件； Spring 两大核心功能：IOC/DI和AOP IOCIOC控制反转：指对象的创建和管理  主动控制：由应用程序创建和管理对象，称为主动控制  适合创建简单对象   控制反转：应用程序将对象的创建和管理交给环境处理，应用程序只是被动的使用对象，称为控制反转。 适合创建和管理复杂对象    使用Spri">
+<meta name="keywords" content="Spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring学习笔记">
+<meta property="og:url" content="http://www.coderbai.club/2019/06/01/Spring学习/index.html">
 <meta property="og:site_name" content="Welcome欢迎访问我的博客!">
+<meta property="og:description" content="SpringSpring 春天 Spring 是开源组织。Spring组织提供了很多开源组件； Spring 两大核心功能：IOC/DI和AOP IOCIOC控制反转：指对象的创建和管理  主动控制：由应用程序创建和管理对象，称为主动控制  适合创建简单对象   控制反转：应用程序将对象的创建和管理交给环境处理，应用程序只是被动的使用对象，称为控制反转。 适合创建和管理复杂对象    使用Spri">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-10T16:15:04.800Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Welcome欢迎访问我的博客!">
+<meta name="twitter:title" content="Spring学习笔记">
+<meta name="twitter:description" content="SpringSpring 春天 Spring 是开源组织。Spring组织提供了很多开源组件； Spring 两大核心功能：IOC/DI和AOP IOCIOC控制反转：指对象的创建和管理  主动控制：由应用程序创建和管理对象，称为主动控制  适合创建简单对象   控制反转：应用程序将对象的创建和管理交给环境处理，应用程序只是被动的使用对象，称为控制反转。 适合创建和管理复杂对象    使用Spri">
   
     <link rel="alternative" href="/atom.xml" title="Welcome欢迎访问我的博客!" type="application/atom+xml">
   
@@ -144,101 +148,252 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Spring学习" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/11/保密学习/" class="archive-article-date">
-  	<time datetime="2019-07-10T16:22:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-11</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/11/保密学习/">保密学习</a>
+    <h1 class="article-title" itemprop="name">
+      Spring学习笔记
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/06/01/Spring学习/" class="archive-article-date">
+  	<time datetime="2019-05-31T17:04:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><p>Spring 春天</p>
+<p>Spring 是开源组织。Spring组织提供了很多开源组件；</p>
+<p>Spring 两大核心功能：IOC/DI和AOP</p>
+<h2 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h2><p>IOC控制反转：指对象的创建和管理</p>
+<ol>
+<li>主动控制：由应用程序创建和管理对象，称为主动控制 <ul>
+<li>适合创建简单对象</li>
+</ul>
+</li>
+<li>控制反转：应用程序将对象的创建和管理交给环境处理，应用程序只是被动的使用对象，称为控制反转。<ul>
+<li>适合创建和管理复杂对象</li>
+</ul>
+</li>
+</ol>
+<p>使用Spring的IOC功能</p>
+<ol>
+<li>准备一个被IOC管理的类</li>
+<li>利用Maven导入Spring API</li>
+<li>创建一个Spring配置文件，将被IOC管理的类，告诉Spring</li>
+<li>利用配置文件初始化Spring，Spring启动时候自动根据配置文件找到类，并创建对象</li>
+<li>从Spring获得（IOC）创建的对象，测试是否成功创建了对象。</li>
+</ol>
+<p><strong>第1步是建立一个HelloWorld的类，只有一个toString方法，代码如下</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello World"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>第2步是利用Maven导入Spring API</strong>其实就是在<code>pom.xml</code>中加入以下代码</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.9RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>第3步其实就是复制配置文件，然后清空，添加一个<bean>标签，代码如下</bean></strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"hello"</span> <span class="attr">class</span>=<span class="string">"cn.bai.HelloWorld"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>第4步利用配置文件初始化Spring</strong></p>
+<ol>
+<li><strong>初始化Spring的意思就是创建IOC容器，把配置文件中的<bean>生成对应的对象</bean></strong>（注：不包含<code>scope值为“prototype”</code>[^1]类型的或者<code>lazy的值为true</code>[^2]，即为单例饿汉模式的）</li>
+</ol>
+<p>[^1]: scope有两个值供选择，singleton和prototype，即单例和多例，默认值为singleton ；<br>[^2]: lazy有两个值，true和false，默认为true，指的是懒汉模式启动。</p>
+<p>这个过程需要在测试文件夹中写出，需要导入junit包</p>
+<p>在pom.xml中导入如下代码</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>导入junit测试单元</p>
+<p>在测试文件夹下创建测试包和测试类，利用@Test注解来测试</p>
+<p>代码如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ClassPathXmlApplicationContext ctx  = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">        HelloWorld hw =(HelloWorld) ctx.getBean(<span class="string">"hello"</span>);</span><br><span class="line">      System.out.println(hw);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>为了之后测试方便可以修改代码如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01</span> </span>&#123;</span><br><span class="line">	ClassPathXmlApplicationContext ctx;</span><br><span class="line">	<span class="meta">@Before</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	ctx = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@After</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		ctx.close();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		HelloWorld hw = (HelloWorld) ctx.getBean(<span class="string">"hello"</span>);</span><br><span class="line">        <span class="comment">//强转是必须的，因为ctx.getBean获得的对象类型是Object</span></span><br><span class="line">		System.out.println(hw);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="JavaBean"><a href="#JavaBean" class="headerlink" title="JavaBean"></a>JavaBean</h2><p>JavaBean是指其类型满足一定规则的java对象。规范如下</p>
+<ol>
+<li>==类必须==有包（package）；==//有包名才可以导包，然后调用.class==</li>
+<li>==类必须==有无参构造器，默认构造器就是无参构造器；<ul>
+<li>方便派生子类</li>
+</ul>
+</li>
+<li>实现序列化接口，方便java底层自动进行对象序列化；==<u>测试发现不实现序列化接口也是可以的</u>==</li>
+<li>==类必须==是public修饰的；</li>
+<li>==可以==包含Bean属性。Bean属性就是setXxx、getXxx方法。<ul>
+<li>当有方法getName，setName时，就称为包含Bean属性name；</li>
+<li>boolean类型的Bean属性方法：getXxx或isXxx，==没有setXxx==</li>
+</ul>
+</li>
+<li>==必须的构成一句口诀：包公无（包：必须有包；公：public；无：无参构造）==</li>
+</ol>
+<p>例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;<span class="comment">//对象属性，实例变量</span></span><br><span class="line">    <span class="keyword">private</span> String name;<span class="comment">//对象属性，实例变量</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> married;  <span class="comment">//对象属性，实例变量</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//无参构造器</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;<span class="comment">//JavaBean属性，属性名为age</span></span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">setName</span><span class="params">()</span></span>&#123;<span class="comment">//JavaBean属性，属性名为name</span></span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">setMarried</span><span class="params">()</span></span>&#123;<span class="comment">//</span></span><br><span class="line">        <span class="keyword">return</span> married;</span><br><span class="line">    &#125;</span><br><span class="line">   <span class="comment">//married的get方法不能写成public boolean getMarried()，只能写成下面这种</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isMarried</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> married;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><del>public boolean setMarried(){<br>      return married;<br>    }</del>这种写法不对</p>
+<h4 id="Spring-IOC"><a href="#Spring-IOC" class="headerlink" title="Spring IOC"></a>Spring IOC</h4><p>Spring IOC是管理JavaBean对象的容器。</p>
+<ol>
+<li>Spring 建议被管理的对象采用JavaBean规范。<ul>
+<li>Spring可以宽泛的支持Java对象，几遍没有遵守JavaBean规范</li>
+</ul>
+</li>
+<li>JavaBean规范不是强制性规范，但是被所有企业作为变成规范。</li>
+</ol>
+<h3 id="Spring-提供了重载的getBean方法"><a href="#Spring-提供了重载的getBean方法" class="headerlink" title="Spring 提供了重载的getBean方法"></a>Spring 提供了重载的getBean方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ctx.getBean(beanId, bean的类型)，bean类型==JavaBean类.class;</span><br><span class="line">ctx.getBean(beanId);</span><br><span class="line"><span class="comment">//注意：beanId是唯一的，不允许重复</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">摘要算法 盐值 MD5</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.coderbai.club/2019/06/01/Spring学习/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/11/AJAX学习/" class="archive-article-date">
-  	<time datetime="2019-06-10T16:15:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-11</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/06/03/持久层学习/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          MyBatis学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/11/Hexo博客中文乱码问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo博客中文乱码问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/11/AJAX学习/">AJAX学习</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AJAX Json</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2019/page/2/">2</a><a class="page-number" href="/archives/2019/page/3/">3</a><a class="extend next" rel="next" href="/archives/2019/page/2/">Next &raquo;</a>
-    </nav>
+  
+
   
 
 
@@ -262,8 +417,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
