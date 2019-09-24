@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.coderbai.club">
-  <title>Archives: 2019 | Welcome欢迎访问我的博客!</title>
+  <title>&#39;SpringBoot的配置&#39; | Welcome欢迎访问我的博客!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Welcome欢迎访问我的博客!">
-<meta property="og:url" content="http://www.coderbai.club/archives/2019/page/3/index.html">
+  <meta name="description" content="根据需求进行配置：假设需求：查询所有的用户信息 重要分析： 框架默认选取springboot，去官网下载项目模板，要查询用户信息就需要链接数据库，用到MyBatis； 配置MyBatis，连接MySQL数据库； 需要写SQL，就得有UserMapper.xml文件，Mapper.xml需要配置&amp;lt;mapper namespace=&amp;quot;接口类的全类名&amp;quot;.../&amp;gt;，SQL语">
+<meta name="keywords" content="SpringBoot配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&#39;SpringBoot的配置&#39;">
+<meta property="og:url" content="http://www.coderbai.club/2019/04/24/SpringBoot的配置/index.html">
 <meta property="og:site_name" content="Welcome欢迎访问我的博客!">
+<meta property="og:description" content="根据需求进行配置：假设需求：查询所有的用户信息 重要分析： 框架默认选取springboot，去官网下载项目模板，要查询用户信息就需要链接数据库，用到MyBatis； 配置MyBatis，连接MySQL数据库； 需要写SQL，就得有UserMapper.xml文件，Mapper.xml需要配置&amp;lt;mapper namespace=&amp;quot;接口类的全类名&amp;quot;.../&amp;gt;，SQL语">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-24T15:01:15.311Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Welcome欢迎访问我的博客!">
+<meta name="twitter:title" content="&#39;SpringBoot的配置&#39;">
+<meta name="twitter:description" content="根据需求进行配置：假设需求：查询所有的用户信息 重要分析： 框架默认选取springboot，去官网下载项目模板，要查询用户信息就需要链接数据库，用到MyBatis； 配置MyBatis，连接MySQL数据库； 需要写SQL，就得有UserMapper.xml文件，Mapper.xml需要配置&amp;lt;mapper namespace=&amp;quot;接口类的全类名&amp;quot;.../&amp;gt;，SQL语">
   
     <link rel="alternative" href="/atom.xml" title="Welcome欢迎访问我的博客!" type="application/atom+xml">
   
@@ -144,101 +148,217 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-SpringBoot的配置" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/11/Hexo博客中文乱码问题/" class="archive-article-date">
-  	<time datetime="2019-05-10T16:02:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-11</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/11/Hexo博客中文乱码问题/">Hexo博客中文乱码问题</a>
+    <h1 class="article-title" itemprop="name">
+      &#39;SpringBoot的配置&#39;
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/04/24/SpringBoot的配置/" class="archive-article-date">
+  	<time datetime="2019-04-24T14:48:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="根据需求进行配置："><a href="#根据需求进行配置：" class="headerlink" title="根据需求进行配置："></a>根据需求进行配置：</h3><p>假设需求：查询所有的用户信息</p>
+<h3 id="重要分析："><a href="#重要分析：" class="headerlink" title="重要分析："></a>重要分析：</h3><ol>
+<li><strong>框架默认选取<code>springboot</code>，去官网下载项目模板，要查询用户信息就需要链接数据库，用到<code>MyBatis</code>；</strong></li>
+<li><strong>配置<code>MyBatis</code>，连接<code>MySQL</code>数据库；</strong></li>
+<li><strong>需要写<code>SQL</code>，就得有<code>UserMapper.xml</code>文件，<code>Mapper.xml</code>需要配置<code>&lt;mapper namespace=&quot;接口类的全类名&quot;.../&gt;</code>，<code>SQL</code>语句类似<code>&lt;select id=&quot;抽象类中的抽象方法&quot; resultType=&quot;实体类全类名&quot;&gt;select * from test&lt;/select&gt;</code>，需要创建接口类<code>UserMapper</code>和它的抽象方法，而这个抽象方法的基础是有实体类User；</strong></li>
+<li><strong>接着创建测试类，会用到<code>@Autowired</code>的这个注解，使用这个注解的前提是在主类启动类的前面加上<code>@MapperScan（&quot;com.example.demo1.mapper&quot;）</code>，如果不写无法自动注入会报错找不到合适的Bean对象！！</strong></li>
+<li><strong>同时还必须在<code>application.properties</code>配置文件中指定<code>mybatis.mapper-locations</code>的属性为<code>classpath：mappers/*.xml</code>，如果不写会报错<code>org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.example.demo1.mapper.UserMapper.findAll</code>。</strong></li>
+</ol>
+<h3 id="配置的步骤："><a href="#配置的步骤：" class="headerlink" title="配置的步骤："></a>配置的步骤：</h3><ol>
+<li><p><code>https://spring.io/projects/spring-boot</code>进入这个网站点击<code>Quick start</code>中的<code>Bootstrap your application with [Spring Initializr](https://start.spring.io/).</code>按钮，可以快速创建SpringBoot项目。</p>
+</li>
+<li><p>选择按顺序填写对应的参数，在<code>Dependencies</code>中选择<code>Mybatis Framework</code>,点击生成项目，之后导入</p>
+<p>项目文件。</p>
+</li>
+<li><p>测试主类会报错，这是因为添加了MyBatis依赖，需要配置数据库，选择resources源文件夹中的<code>application.properties</code>,在其中添加数据库的url，username，password</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">spring.datasource.url</span>=<span class="string">jdbc:mysql://localhost:3306/数据库名?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimeZone=Asia/Shanghai   (配置信息单独一行)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">spring.datasource.username</span>=<span class="string">root</span></span><br><span class="line"></span><br><span class="line"><span class="meta">spring.datasource.password</span>=<span class="string">123456</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>pom.xml</code>文件下导入mysql的依赖，查找阿里云maven仓库<code>https://maven.aliyun.com/mvn/search</code>,查找<code>mysql-connector-java</code>，导入依赖测试主类，发现不再报错，mysql配置完成。</p>
+</li>
+<li><p>mysql中创建表test并插入数据，SQL语句为</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//创建表test</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">test</span> (<span class="keyword">id</span> <span class="built_in">int</span> auto_increment primary <span class="keyword">key</span>,username <span class="built_in">varchar</span>(<span class="number">20</span>),<span class="keyword">password</span> <span class="built_in">varchar</span>(<span class="number">20</span>),age <span class="built_in">int</span>) <span class="keyword">charset</span>=utf8;</span><br><span class="line">//插入数据</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">test</span> <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'lisi'</span>,<span class="string">'123'</span>,<span class="number">30</span>),(<span class="literal">null</span>,<span class="string">'zs'</span>,<span class="string">'123'</span>,<span class="number">18</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>com.example.demo1.entity</code>包下创建实体类User</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> Integer id;</span><br><span class="line">	<span class="keyword">private</span> String username;</span><br><span class="line">	<span class="keyword">private</span> String password;</span><br><span class="line">	<span class="keyword">private</span> Integer age;</span><br><span class="line">	<span class="comment">//生成getter和setter方法</span></span><br><span class="line">	<span class="comment">//生成toString方法</span></span><br><span class="line">	<span class="comment">//以id生成hashcode()和equals()方法</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>com.example.demo1.mapper</code>包下创建实体类Mapper接口UserMapper</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo1.mapper;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> com.example.demo1.entity.User;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserMapper</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 查找所有用户</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function">List&lt;User&gt; <span class="title">findAll</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>src/main/resources</code>下创建文件夹<code>mappers</code>在这个文件夹下创建<code>UserMapper.xml</code>文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--UserMapper.xml的具体配置 --&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"      </span></span><br><span class="line"><span class="meta">  "http://mybatis.org/dtd/mybatis-3-mapper.dtd" &gt;</span></span><br><span class="line"><span class="comment">&lt;!--"http://mybatis.org/dtd/mybatis-3-mapper.dtd"这个网址是制定mybatis的mapper接口的规则，相当于是下面语法的规则 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.example.demo1.mapper.UserMapper"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- namespace 属性必须得写到具体的Mapper，是指定各种抽象方法的具体实现的空间 --&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 查找所有用户 --&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- List&lt;User&gt; findAll(); --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"findAll"</span> <span class="attr">resultType</span>=<span class="string">"com.example.demo1.entity.User"</span>&gt;</span></span><br><span class="line">		SELECT</span><br><span class="line">		*</span><br><span class="line">		FROM</span><br><span class="line">		test</span><br><span class="line">	<span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="9">
+<li><p>在<code>src/test/java</code>创建测试类<code>com.example.demo1.mapper.UserMapperTest.java</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo1.mapper;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"><span class="keyword">import</span> com.example.demo1.entity.User;</span><br><span class="line"><span class="meta">@RunWith</span>(SpringRunner.class)</span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="comment">//上面两个注释是必须的！！！可以从springboot自带的测试类复制</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserMapperTest</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="comment">//出现了@Autowired就必须在主类前加@MapperScan("com.example.demo1.mapper")</span></span><br><span class="line">	<span class="comment">//添加的是抽象类自身的全类名，这个是通过代理对象方式自动注入</span></span><br><span class="line">	<span class="keyword">private</span> UserMapper mapper;</span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">findAll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		List&lt;User&gt; result = mapper.findAll();</span><br><span class="line">		System.err.println(result);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>附加知识点：Mapper代理对象</p>
+<p>​        <code>mapper</code>接口的定义在bean加载阶段会被替换成<code>MapperFactoryBean</code>类型，在spring容器初始化的时候会给我们生成<code>MapperFactoryBean</code>类型的对象，在该对象生成的过程中调用<code>afterPropertiesSet()</code>方法，为我们生成了一个<code>MapperProxyFactory</code>类型的对象存放于<code>Configuration</code>里的<code>MapperRegistry</code>对象中，同时解析了<code>mapper</code>接口对应的<code>xml</code>文件，把每一个方法解析成一个<code>MappedStatement</code>对象，存放于<code>Configuration</code>里的<code>mappedStatements</code>这个Map集合中。</p>
+<p>参考文章：<a href="https://blog.csdn.net/qq_21441857/article/details/83015543" target="_blank" rel="noopener">https://blog.csdn.net/qq_21441857/article/details/83015543</a></p>
+</li>
+<li><p>打开<code>application.properties</code>配置文件配置<code>MyBatis</code>的<code>Mapper</code>路径</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">spring.datasource.url</span>=<span class="string">jdbc:mysql://localhost:3306/tedu_store?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=Asia/Shanghai</span></span><br><span class="line"><span class="meta">spring.datasource.username</span>=<span class="string">root</span></span><br><span class="line"><span class="meta">spring.datasource.password</span>=<span class="string">123456</span></span><br><span class="line"><span class="comment">#配置`MyBatis`的`Mapper`路径</span></span><br><span class="line"><span class="meta">mybatis.mapper-locations</span>=<span class="string">classpath:mappers/*.xml</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="配置基本完成！后续会补充其他框架配置方法！"><a href="#配置基本完成！后续会补充其他框架配置方法！" class="headerlink" title="配置基本完成！后续会补充其他框架配置方法！"></a>配置基本完成！后续会补充其他框架配置方法！</h4></li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hexo博客 中文字体</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">SpringBoot配置</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.coderbai.club/2019/04/24/SpringBoot的配置/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/03/Hexo博客修改推远端的方法/" class="archive-article-date">
-  	<time datetime="2019-05-03T14:41:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-03</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/05/03/Hexo博客修改推远端的方法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hexo博客修改推远端的方法
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/03/Hexo博客修改推远端的方法/">Hexo博客修改推远端的方法</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hexo微博创建及部署</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2019/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2019/page/4/">4</a><a class="extend next" rel="next" href="/archives/2019/page/4/">Next &raquo;</a>
-    </nav>
+  
+
   
 
 
@@ -262,8 +382,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
